@@ -1,0 +1,7 @@
+FROM ubuntu:22.04
+WORKDIR /apache2
+RUN apt update && apt install apahe2 -y
+RUN apt update && apt install libapache2-mod-php php -y
+RUN echo "<?php phpinfo() ?>" > /var/www/html/info.php
+EXPOSE 80
+CMD ["sleep","10s"]
